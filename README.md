@@ -1,5 +1,5 @@
 # ick-deployment
-Kubernetes deployment of the InfluxDB, Chronograf and Kapacitor stack.
+Kubernetes deployment of the InfluxDB, Chronograf, and Kapacitor stack.
 
 [InfluxDB](https://github.com/influxdata/influxdb) is an open source time series database. It's useful for recording metrics, events, and performing analytics.
 
@@ -64,7 +64,7 @@ source create_dns_record.sh chronograf demo $INGRESS_IP
 cd ..
 ```
 
-Finally create the TLS certs secret. This requires the wildcard certs made by SQuaRE are sahred through the `lsst-certs.git` repo.
+Finally create the TLS certs secret. This requires the wildcard certs made by SQuaRE, and shared through the `lsst-certs.git` repo.
 
 ```
 make tls-certs
