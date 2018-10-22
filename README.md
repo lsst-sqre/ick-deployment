@@ -41,6 +41,12 @@ Deploy Chronograf
 helm install stable/chronograf -f chronograf-values.yaml --name chronograf
 ```
 
+Deploy Kapacitor
+```
+helm install stable/kapacitor -f kapacitor-values.yaml --name kapacitor
+```
+
+
 Create DNS records on AWS Route53. They will point to the ingress controller IP address, and will be routed to the corresponding service in the cluster based on the host name.
 
 ```
@@ -55,7 +61,6 @@ Get the ingress IP address using `kubectl get services` or directly:
 INGRESS_IP=$(kubectl get ingress -o jsonpath --template='{.items[0].status.loadBalancer.ingress[0].ip}')
 ```
 and then use this script to create the DNS records:
-
 ```
 cd terraform
 make
@@ -71,3 +76,12 @@ make tls-certs
 ```
 
 You should be able to connect to the UI at `https://chronograf-demo.lsst.codes`
+
+
+## Configuring Kapacitor-Slack integration
+
+1. On the Chronograf configuration, add a new Kapacitor connection
+2. Set the Kapacitor URL for this deployment: http://kapacitor-kapacitor.influxdb-demo:9092
+3. Configure an alert endpoint for Slack
+  - Create a new Slack App https://api.slack.com/apps/new
+  - Enable Incoming Webhooks and set the Slack webhook URL and the Slack channel to the alert endpoint configuration 
