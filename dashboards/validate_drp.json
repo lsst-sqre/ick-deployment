@@ -1,0 +1,621 @@
+{
+	"meta": {
+		"chronografVersion": "201810242049~nightly",
+		"sources": {
+			"2": {
+				"name": "SQuaSH",
+				"link": "/chronograf/v1/sources/2"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 5,
+		"cells": [
+			{
+				"i": "2adf0a27-6b9e-4e6b-a115-1b5f741d4861",
+				"x": 0,
+				"y": 4,
+				"w": 12,
+				"h": 2,
+				"name": "Astrometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM2\" as \"AM2\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM2\" as \"AM2\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM2",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "My awesome time series plot showing AM2 metric. You can select a different dataset from the selection widget above. In Chronograf 1.7 I can add these notes describing the plots...\n",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/2adf0a27-6b9e-4e6b-a115-1b5f741d4861"
+				}
+			},
+			{
+				"i": "cb4ef303-e150-4b15-8d1d-8481e4b8069d",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 2,
+				"name": "Introduction",
+				"queries": [
+					{
+						"query": "",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "note",
+				"colors": [],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "## My awesome dashboard showing validate_drp metrics\n\nIn Chronograf 1.7 you can have cells like this one with HTML or Markdown content. With this mechanism we can also embed other contents from our APIs...\n",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/cb4ef303-e150-4b15-8d1d-8481e4b8069d"
+				}
+			},
+			{
+				"i": "dcacbe3c-3faf-49fa-864f-3c8667f62799",
+				"x": 0,
+				"y": 8,
+				"w": 12,
+				"h": 3,
+				"name": "Table view ",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM1\" as \"AM1\", \"validate_drp.AM2\" as \"AM2\", \"validate_drp.PA1\" as \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > '2016-10-18T20:49:00.000Z' AND time < '2018-10-18T20:49:00.000Z' AND \"dataset\"='validation_data_hsc' AND \"filter_name\"='HSC-I'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM1\" as \"AM1\", \"validate_drp.AM2\" as \"AM2\", \"validate_drp.PA1\" as \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > '2016-10-18T20:49:00.000Z' AND time < '2018-10-18T20:49:00.000Z' AND \"dataset\"='validation_data_hsc' AND \"filter_name\"='HSC-I'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "Time (UTC)",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time (UTC)",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.AM1",
+						"displayName": "AM1",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.AM2",
+						"displayName": "AM2",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.PA1",
+						"displayName": "PA1",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 4
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/dcacbe3c-3faf-49fa-864f-3c8667f62799"
+				}
+			},
+			{
+				"i": "0c0b336b-d9e2-47e4-8c2f-ea79b062307f",
+				"x": 0,
+				"y": 6,
+				"w": 12,
+				"h": 2,
+				"name": "Photometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.PA1\" AS \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.PA1\" AS \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "PA1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/0c0b336b-d9e2-47e4-8c2f-ea79b062307f"
+				}
+			},
+			{
+				"i": "f14983cf-d803-4400-99e3-e691cce6936c",
+				"x": 0,
+				"y": 2,
+				"w": 12,
+				"h": 2,
+				"name": "Astrometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM1\" as \"AM1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM1\" as \"AM1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "My awesome time series plot showing AM1 metric. You can select a different dataset from the selection widget above. In Chronograf 1.7 I can add these notes describing the plots...\n",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/f14983cf-d803-4400-99e3-e691cce6936c"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":Dataset:",
+				"values": [
+					{
+						"value": "validation_data_hsc",
+						"type": "tagValue",
+						"selected": true
+					}
+				],
+				"id": "2d2d36ce-21ef-48fc-a0c1-4b954512f9a5",
+				"type": "tagValues",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON :database: FROM :measurement: WITH KEY=:tagKey:",
+					"db": "squash-prod",
+					"measurement": "validate_drp",
+					"tagKey": "dataset",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/templates/2d2d36ce-21ef-48fc-a0c1-4b954512f9a5"
+				}
+			}
+		],
+		"name": "validate_drp",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/5",
+			"cells": "/chronograf/v1/dashboards/5/cells",
+			"templates": "/chronograf/v1/dashboards/5/templates"
+		}
+	}
+}
