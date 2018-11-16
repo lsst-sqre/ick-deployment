@@ -7,23 +7,17 @@ Kubernetes deployment of the InfluxDB, Chronograf, and Kapacitor stack.
 
 [Kapacitor](https://github.com/influxdata/kapacitor) is an open-source framework written in Go for processing, monitoring, and alerting on time series data.
 
-Create a cluster on GKE, using your preferred method. Make sure your `kubectl` client is connected to that cluster, and returns the expected context:
+Create a cluster on GKE and make sure your `kubectl` client is connected to the right context:
 ```
 kubectl config current-context
 ```
 
-Deploy Tiller, the server portion of Helm
+Deploy Tiller, the server portion of Helm (if not already deployed)
 
-You can do that on the `kube-system` namespace, and create a service account with cluster-admin role, but see [Helm and RBAC](https://docs.helm.sh/using_helm/#role-based-access-control) for other options.
+You can do that on the `kube-system` namespace, and create a service account with cluster-admin role, but see also [Helm and RBAC](https://docs.helm.sh/using_helm/#role-based-access-control) for more secure options.
 ```
 kubectl create -f kubernetes/rbac-config.yaml
 helm init --service-account tiller
-```
-
-Create a specific namespace for the ick-deployment and modify the current context to use it by default:
-```
-kubectl create namespace demo
-kubectl config set-context $(kubectl config current-context) --namespace=demo
 ```
 
 Deploy the nginx ingress controller
@@ -50,23 +44,20 @@ Create DNS records on AWS Route53. They will point to the ingress controller IP 
 
 ```
   influxdb-demo.lsst.codes --|                      |-> influxdb-influxdb:8086
-                             | <Ingress IP address> |  
+                             | <LoadBalancer Ingress IP address> |  
 chronograf-demo.lsst.codes --|                      |-> chronograf-chronograf:8888
 ```
 
-Get the ingress IP address using `kubectl get services` or directly:
-```
-INGRESS_IP=$(kubectl get ingress -o jsonpath --template='{.items[0].status.loadBalancer.ingress[0].ip}')
-```
-
-and then use this script to create the DNS records:
+Get the LoadBalancer Ingress IP address from `kubectl describe service nginx-ingress-controller`, and then use the following to create the DNS records:
 ```
 cd terraform
 make
-source create_dns_record.sh influxdb demo $INGRESS_IP
-source create_dns_record.sh chronograf demo $INGRESS_IP
+source create_dns_record.sh influxdb demo <LoadBalancer Ingress>
+source create_dns_record.sh chronograf demo <LoadBalancer Ingress>
 cd ..
 ```
+
+NOTE: this will produce hostnames like above, make sure the `ingress.hostname` is set accordingly in the helm chart for InfluxDB and Chronograf.
 
 Finally create the TLS certs secret. This requires the wildcard certs made by SQuaRE, and shared through the `lsst-certs.git` repo.
 ```
@@ -78,7 +69,8 @@ You should be able to connect to the UI at `https://chronograf-demo.lsst.codes`
 ## Configuring Slack integration for Alerts
 
 1. On the Chronograf configuration, add a new Kapacitor connection
-2. Set the Kapacitor URL for this deployment: http://kapacitor-kapacitor.influxdb-demo:9092
+2. Set the Kapacitor URL for this deployment: http://kapacitor-kapacitor.default:9092
+
 3. Configure an alert endpoint for Slack
   - Create a new Slack App https://api.slack.com/apps/new
-  - Enable Incoming Webhooks and set the Slack webhook URL and the Slack channel to the alert endpoint configuration 
+  - Enable Incoming Webhooks and set the Slack webhook URL and the Slack channel to the alert endpoint configuration
