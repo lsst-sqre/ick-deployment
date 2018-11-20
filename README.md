@@ -74,3 +74,14 @@ You should be able to connect to the UI at `https://chronograf-demo.lsst.codes`
 3. Configure an alert endpoint for Slack
   - Create a new Slack App https://api.slack.com/apps/new
   - Enable Incoming Webhooks and set the Slack webhook URL and the Slack channel to the alert endpoint configuration
+
+## Monitoring InfluxDB load (optional)
+
+The Telegraf InfluxDB Input Plugin populates the `influxdb_*` measurements with several metrics that can be used to monitor the InfluxDB load.
+
+Deploy Telegraf
+```
+helm install stable/telegraf -f telegraf-values.yaml --name telegraf
+```
+
+Import the `dashboards/influxdb_load.json` dashboard using the Chronograf UI.s
