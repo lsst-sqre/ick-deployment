@@ -66,6 +66,18 @@ make tls-certs
 
 You should be able to connect to the UI at `https://chronograf-demo.lsst.codes`
 
+## Configuring GitHub authentication
+
+Chronograf supports using [GitHub OAuth 2.0 authentication](https://docs.influxdata.com/chronograf/v1.7/administration/managing-security/#configuring-github-authentication)
+
+Set the corresponding values in `chronograf-values.yaml`.
+
+By default, access is restricted to the following github orgs:
+
+```
+gh_orgs: "lsst-sqre,lsst-dm,lsst"
+```
+
 ## Configuring Slack integration for Alerts
 
 1. On the Chronograf configuration, add a new Kapacitor connection
