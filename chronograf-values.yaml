@@ -16,7 +16,7 @@ service:
 ## Persist data to a persistent volume
 ##
 persistence:
-  enabled: false
+  enabled: true
   ## chronograf data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -57,15 +57,15 @@ ingress:
 ##
 oauth:
   # Need to set to true to use any of the oauth options
-  enabled: false
+  enabled: true
   # Used for JWT to support running multiple copies of Chronograf
   token_secret: CHANGE_ME
   github:
-    enabled: false
+    enabled: true
     client_id: CHANGE_ME
     client_secret: CHANGE_ME
     # This is a comma separated list of GH organizations (OPTIONAL)
-    gh_orgs: ""
+    gh_orgs: "lsst-sqre,lsst-dm,lsst"
   google:
     enabled: false
     client_id: CHANGE_ME
