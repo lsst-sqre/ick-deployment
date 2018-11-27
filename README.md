@@ -70,7 +70,7 @@ You should be able to connect to the UI at `https://chronograf-demo.lsst.codes`
 
 Chronograf supports using [GitHub OAuth 2.0 authentication](https://docs.influxdata.com/chronograf/v1.7/administration/managing-security/#configuring-github-authentication)
 
-Set the corresponding values in `chronograf-values.yaml`.
+Set the corresponding values for `Token Secret`, `Client ID`, and `Client Secret` in `chronograf-values.yaml`.
 
 By default, access is restricted to the following github orgs:
 
