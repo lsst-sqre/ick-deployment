@@ -1,7 +1,7 @@
 ## Image Settings
 ##
 image:
-  repository: "quay.io/influxdb/chronograf"
+  repository: "lsstsqre/chronograf"
   tag: "latest"
   pullPolicy: "Always"
 
