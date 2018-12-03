@@ -96,4 +96,19 @@ Deploy Telegraf
 helm install stable/telegraf -f telegraf-values.yaml --name telegraf
 ```
 
-Import the `dashboards/influxdb_load.json` dashboard using the Chronograf UI.s
+Import the `dashboards/influxdb_load.json` dashboard using the Chronograf UI.
+
+## Backup/restore an InfluxDB database
+
+Procedure for backup/restore an InfluxDB database:
+```
+kubectl exec -it <origin pod>  -- influxd backup -portable -database <db name> ./<db name>.influx
+
+kubectl cp <origin pod>:./<db name>.influx <db name>.influx
+
+<change context if needed>
+
+kubectl cp ./<db name>.influx <dest pod>:./<db name>.influx
+
+kubectl exec -it <dest pod> -- influxd restore -portable -db <db name> ./<db name>.influx
+```
