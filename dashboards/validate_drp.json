@@ -1,0 +1,768 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.0",
+		"sources": {
+			"2": {
+				"name": "SQuaSH",
+				"link": "/chronograf/v1/sources/2"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 2,
+		"cells": [
+			{
+				"i": "31a8fc8f-ee23-41a1-b349-b7e29abcf1ee",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 2,
+				"name": "Image Quality",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.TE1\" AS \"TE1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.TE1\" AS \"TE1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "TE1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/31a8fc8f-ee23-41a1-b349-b7e29abcf1ee"
+				}
+			},
+			{
+				"i": "2b83b19e-850b-4838-b943-2a995721f868",
+				"x": 6,
+				"y": 2,
+				"w": 6,
+				"h": 2,
+				"name": "Astrometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM2\" as \"AM2\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM2\" as \"AM2\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY  \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM2",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/2b83b19e-850b-4838-b943-2a995721f868"
+				}
+			},
+			{
+				"i": "c5d67ca4-ce35-4afa-b670-94b899e260a5",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 2,
+				"name": "Introduction",
+				"queries": [
+					{
+						"query": "",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "note",
+				"colors": [],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "## Data Release Processing metrics\n\nData presented here is from nightly runs of [validate_drp](https://ci.lsst.codes/blue/organizations/jenkins/sqre%2Fvalidate_drp/activity).\n",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/c5d67ca4-ce35-4afa-b670-94b899e260a5"
+				}
+			},
+			{
+				"i": "d8e50598-f11b-4f88-80a4-4927bcc95727",
+				"x": 0,
+				"y": 6,
+				"w": 12,
+				"h": 5,
+				"name": "Table view ",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM1\" AS \"AM1\", \"validate_drp.AM2\" AS \"AM2\", \"validate_drp.PA1\" AS \"PA1\", \"validate_drp.TE1\" AS \"TE1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM1\" AS \"AM1\", \"validate_drp.AM2\" AS \"AM2\", \"validate_drp.PA1\" AS \"PA1\", \"validate_drp.TE1\" AS \"TE1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "Time (UTC)",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time (UTC)",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.AM1",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.AM2",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.PA1",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "validate_drp.TE1",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 4
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/d8e50598-f11b-4f88-80a4-4927bcc95727"
+				}
+			},
+			{
+				"i": "c1293d1e-833f-49dc-acba-cf573699cc29",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 2,
+				"name": "Photometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.PA1\" AS \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.PA1\" AS \"PA1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "PA1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/c1293d1e-833f-49dc-acba-cf573699cc29"
+				}
+			},
+			{
+				"i": "7df11386-dd4f-4bd4-8b2d-1b1f93f8dc7f",
+				"x": 0,
+				"y": 2,
+				"w": 6,
+				"h": 2,
+				"name": "Astrometry",
+				"queries": [
+					{
+						"query": "SELECT \"validate_drp.AM1\" AS \"AM1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"validate_drp.AM1\" AS \"AM1\" FROM \"squash-prod\".\"autogen\".\"validate_drp\" WHERE time > :dashboardTime: AND \"filter_name\"=':Filter:' AND \"ci_dataset\"=:Dataset: GROUP BY \"filter_name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/2",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "AM1",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "32ed943e-08ce-4567-83df-5668617327bf",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "949217cd-2c38-47eb-94d1-087b5c35d06d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9ab6b7b4-49d8-4d78-9d6b-d52fbb4adeda",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/7df11386-dd4f-4bd4-8b2d-1b1f93f8dc7f"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":Dataset:",
+				"values": [
+					{
+						"value": "validation_data_hsc",
+						"type": "tagValue",
+						"selected": true
+					}
+				],
+				"id": "2d2d36ce-21ef-48fc-a0c1-4b954512f9a5",
+				"type": "tagValues",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON :database: FROM :measurement: WITH KEY=:tagKey:",
+					"db": "squash-prod",
+					"measurement": "validate_drp",
+					"tagKey": "ci_dataset",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/templates/2d2d36ce-21ef-48fc-a0c1-4b954512f9a5"
+				}
+			},
+			{
+				"tempVar": ":Filter:",
+				"values": [
+					{
+						"value": "HSC-R",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "131eec04-5636-4950-bb73-2a381588315c",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"squash-prod\" FROM validate_drp WITH KEY = \"filter_name\" WHERE \"ci_dataset\" = :Dataset:",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/templates/131eec04-5636-4950-bb73-2a381588315c"
+				}
+			}
+		],
+		"name": "Data Release Processing metrics",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/2",
+			"cells": "/chronograf/v1/dashboards/2/cells",
+			"templates": "/chronograf/v1/dashboards/2/templates"
+		}
+	}
+}
